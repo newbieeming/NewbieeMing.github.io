@@ -173,7 +173,7 @@ To make these errors go away, you have two choices:
 make -j12
 ```
 
-#### 2.enulator打开失败
+#### 2.emulator打开失败
 
 ```text
 emulator 
