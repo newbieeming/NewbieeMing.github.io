@@ -29,7 +29,7 @@ Matching Java Virtual Machines (2):
 3. 配置环境变量
 
 ```shell
-vim ~/.bash_profile
+vim ~/.zshrc
 # 按i键进入输入模式粘贴以下内容
 JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 PATH=$PATH:$JAVA_HOME/bin/:.
@@ -40,60 +40,43 @@ export CLASSPATH
 # 按ESC进入命令模式输入以下内容
 :wq
 # 生效该配置文件
-source ~/.bash_profile
+source ~/.zshrc
+```
+4. 查看是否配置成功
+```shell
+java -version 
 ```
 
-4. 发现退出终端再打开时输入常用命令不识别，且输出以下内容
-
+5. 已配置的环境变量（备份）
 ```shell
-zsh: command not found: ls
-```
-
-```shell
-vim ~/.zshrc
-# 按i键进入输入模式粘贴以下内容
-source ~/.bash_profile
-# 按ESC进入命令模式输入以下内容
-:wq
-# 生效该配置文件
-source ~/.bash_profile
-```
-
-### 安装Maven
-
-1. 下载maven压缩包解压到指定目录
-2. 配置环境变量
-3. mvn -v 查看是否成功
-
-```shell
-# ~/.bash_profile内容
+# cat ~/.zshrc
+#jdk path
 JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
-M2_HOME=/Users/xiaoming/environment/apache-maven-3.9.3
-PATH=$PATH:$JAVA_HOME/bin/:$M2_HOME/bin:.
+# android sdk path
+SDK_HOME=/Users/xm/Library/Android/sdk
+# custome script
+SCRIPT_HOME=/Users/xm/Documents/Script
+# git path
+GIT_HOME=/opt/homebrew/Cellar/git/2.46.0
+# maven path
+M2_HOME=/Users/xm/Library/env/apache-maven-3.9.9
+# jadx path
+JADX_HOME=/Users/xm/Library/env/jadx-1.4.7
+# classpath
 CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+TXZ_GIT_ROOT=/Users/xm/.txz/TXZ_GIT_ROOT
+# echo $PATH 如果重复，重启终端
+PATH=$PATH:$JAVA_HOME/bin:$SDK_HOME/platform-tools:$SDK_HOME/build-tools/35.0.0:$GIT_HOME/bin:$M2_HOME/bin:$JADX_HOME/bin:$SCRIPT_HOME:$TXZ_GIT_ROOT
+# python3 alias
+alias python="/opt/homebrew/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/bin/python3"
+alias pip="/opt/homebrew/Cellar/python@3.12/3.12.5/Frameworks/Python.framework/Versions/3.12/bin/pip3"
 export JAVA_HOME
-export M2_HOME
 export PATH
 export CLASSPATH
-```
-
-```shell
-# 当前~/.bash_profile
-JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
-SDK_HOME=/Users/xiaoming/Library/Android/sdk
-FLUTTER=/Users/xiaoming/Environment/flutter
-M2_HOME=/Users/xiaoming/Environment/apache-maven-3.9.3
-GIT=/opt/homebrew/bin/git
-PUB_HOSTED_URL="https://pub.flutter-io.cn"
-FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
-PATH=$PATH:$JAVA_HOME/bin/:$FLUTTER/bin/:$SDK_HOME/platform-tools/:$SDK_HOME/build-tools/30.0.3/:$M2_HOME/bin:$GIT/bin:.
-CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
-export PUB_HOSTED_URL
-export FLUTTER_STORAGE_BASE_URL
-export JAVA_HOME
-export SDK_HOME
 export M2_HOME
-export GIT
-export PATH
-export CLASSPATH
+export TXZ_GIT_ROOT
+# fnm环境配置
+eval "$(fnm env --use-on-cd)"
+# fnm 阿里镜像
+export FNM_NODE_DIST_MIRROR=https://mirrors.aliyun.com/nodejs-release/
 ```
