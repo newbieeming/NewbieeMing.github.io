@@ -1,0 +1,43 @@
+navbar:
+  blog_title: Blog
+  menu:
+    - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
+    - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
+    - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    - { key: 'category', link: '/categories/', icon: 'iconfont icon-category-fill' }
+    - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
+    - { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' }
+
+index:
+  slogan:
+    enable: true
+    text: 这是一条 Slogan
+    api:
+      enable: true
+      url: "https://v1.hitokoto.cn/"
+      method: "GET"
+      headers: {}
+      keys: ["hitokoto"]
+
+code:
+  copy_btn: true
+  highlight:
+    enable: true
+    line_number: false
+    lib: "highlightjs"
+    highlightjs:
+      style: 'github'
+      bg_color: true
+    prismjs:
+      style: "tomorrow"
+      preprocess: true
+
+links:
+  items:
+    - {
+      title: 'phcbest',
+      intro: 'Android 微操大师',
+      link: 'https://phcbest.github.io/',
+      avatar: 'https://avatars.githubusercontent.com/u/44636532?v=4'
+    }
+  default_avatar: /img/avatar.png

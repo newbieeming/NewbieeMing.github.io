@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: xm的Blog
+title: Blog
 subtitle: ''
 description: ''
 keywords:
-author: xm
+author: newbieeming
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://xmbest.github.io
+url: https://newbieeming.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -96,34 +96,12 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: cactus
-
-###########
-# https://github.com/probberechts/hexo-theme-cactus
-# cactus config
-theme_config:
-  colorscheme: white
-  nav:
-    主页: /
-    标签: /tags/
-    分类: /categories/
-    归档: /archives/
-    搜索: /search/
-  posts_overview:
-    show_all_posts: true
-  social_links:
-  -
-    icon: github
-    link: https://github.com/xmbest
-  copyright:
-    start_year: 2022
-    end_year:
-  highlight: googlecode
+theme: fluid
 
 ###########
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:xmbest/xmbest.github.io.git
+  repo: git@github.com:newbieeming/newbieeming.github.io.git
   branch: main
